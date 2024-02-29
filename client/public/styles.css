@@ -1,0 +1,257 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+form{
+  border: #000000;
+}
+/*  L O G I N   P A G E */
+.login{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login button{
+  cursor: pointer;
+  width: 10vw;
+  border-radius: 2vh;
+}
+.login form {
+  width: 20vw;
+  /* background-color: rgb(255, 240, 254); */
+  background-color: #0b1d5d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: none;
+  border-top-right-radius: 2vh;
+  border-bottom-right-radius: 2vh;
+  border: 2px solid white;
+}
+.form{
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+  /* border:1px solid  black; */
+}
+.left{
+  background-color: #0b1d5d;
+  /* background-color: rgb(205, 186, 202);*/   
+  /* GOOD PAIR WITH BACKGROUND, NOTE THIS COMBINATION */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  border: 1px solid white;
+  border-top-left-radius: 2vh;
+  border-bottom-left-radius: 2vh;
+}
+.login input, .register input {
+  width: 80%;
+  margin-bottom: 3vh;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: rgb(255, 240, 254);
+  border-radius: 1vh;
+  padding: 8px;
+}
+.form button {
+  margin-top: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+.newUser{
+  color:rgb(255, 240, 254) ;
+  text-decoration: none;
+  font-size: 2.1vh;
+  letter-spacing: 2px;
+}
+.login a{
+  cursor: pointer;
+  color: rgb(136, 36, 0);
+}
+
+@media screen and (max-width: 768px) {
+  .form{
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+  }
+  .login input{
+    margin-top: 20px;
+  }
+  .login button{
+    margin-bottom: 20px;
+    cursor: pointer;
+    height: 5vh;
+    width: 20vw;
+    border-radius: 2vh;
+  }
+  .login form {
+    border-radius: 0px;
+    width: 60vw;
+    /* background-color: rgb(255, 240, 254); */
+    /* background-color: rgb(246, 154, 154); */
+    background-color: #0b1d5d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid  black;
+    border-bottom-right-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+  }
+  .left{
+    /* background-color: rgb(237, 240, 243); */
+    background-color: #0b1d5d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    border: 1px solid  black;
+    border-radius: 0px;
+    border-top-right-radius: 2vh;
+    border-top-left-radius: 2vh;
+  }  
+}
+/* D A S H B O A R D   PAGE */
+.dashBoard{
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Potholes,.StagnantWater,.Streetlight,.WasteManagement{
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+.card{
+  width: 30vw;
+  height: 43vh;
+  border-radius: 5vh;
+  border: 2px solid black;
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(246, 154, 154);
+}
+.card img{
+  width: 100%;
+  height: 200px;
+  border-radius: 5vh;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.card h1,p{
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+/* M A P */
+.embeddedMap{
+  width: 200px;
+  height: 200px;
+}
+.issue{
+  padding: 10px;
+  margin-bottom: 2vh;
+  border: 2px solid black;
+  background-color: rgb(246, 154, 154);
+  /* display: flex; */
+  /* flex-direction: column; */
+  text-align: center;
+  justify-content: center;
+}
+.controls{
+  display: flex;
+  justify-content: space-around;
+}
+.numData{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.Dashboard{
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  background-color: #f8f8f8;
+}
+.chart,.lineChart{
+  width: 41vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  /* height: 30vh; */
+}
+.main{
+  border: 2px solid black;
+  background-color: #dfd4d4;
+}
+.water{
+  border: 2px solid black;
+  /* background-color: #D4E7C5; */
+  background-color: #88AB8E;
+}
+.road{
+  border: 2px solid black;
+  background-color: #b8b5b5;
+}
+.garbage{
+  border: 2px solid black;
+  background-color: aliceblue;
+}
+.electrical{
+  border: 2px solid black;
+  background-color: rgb(55, 171, 171);
+}
+.eleDashboard{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.miniData{
+  padding-left: 70vh;
+  width: 50vh;
+  display: flex;
+  /* flex-direction: column; */
+  text-align: center;
+  justify-content: center;
+
+}
+.rightt{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .appie{
+  background-color: #dfd4d4;
+  border-radius: 50%;
+}
+.report{
+  background-color: #F1E4C3;
+} */
+/* .numData{
+  background-color: #EEE7DA;
+  padding: 150px;
+} */
