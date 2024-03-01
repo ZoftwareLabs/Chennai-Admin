@@ -56,6 +56,7 @@ const EleDash = () => {
         <br />
         <span style={{ color: "black" }}>கோவை</span>
         <br />
+        <a href="/elecrtical-Issues">Issues</a>
       </h1>
       <h1>Electrical Issues</h1>
       <div className="miniData">

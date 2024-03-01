@@ -14,6 +14,40 @@ app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/adminData", adminRoute);
 
+
+
+app.post("/getKey", async (req, res) => {
+  const db = getDatabase();
+  const refDB = req.body.node;
+  const selectedFeedValue = req.body.selectedFeedValue;
+  const DBRef = ref(db, refDB);
+  try {
+    const snapshot = await get(DBRef);
+
+    if (snapshot.exists()) {
+      const dataObject = snapshot.val();
+      const keyValueArray = Object.entries(dataObject);
+
+      const filteredArray = keyValueArray.filter(([key, value]) => {
+        return value.selectedValue === selectedFeedValue;
+      });
+
+      if (filteredArray.length > 0) {
+        res.status(200).json(filteredArray);
+      } else {
+        res.status(404).json({ message: 'No matching data available' });
+      }
+    } else {
+      res.status(404).json({ message: 'No data available' });
+    }
+  } catch (error) {
+    console.error("Error getting data:", error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
 // app.get("/api/getOfficerJobCount",async(req,res)=>{
 // // ceo, vao, police
 //   const db = req.body.username;

@@ -13,6 +13,34 @@ import {
 
 const router = Router();
 
+
+router.post("/getFeed", async (req, res) => {
+  try {
+    const { selectedFeedValue } = req.body;
+    const feedData = await readAllData("feed");
+
+    const selectedFeed = [];
+
+    for (const key in feedData) {
+      if (feedData[key].selectedValue === selectedFeedValue) {
+        const response = feedData[key];
+        selectedFeed.push(response);
+      }
+    }
+
+    // if (selectedFeed.length > 0) {
+      res.status(200).json(selectedFeed);
+    // } else {
+      // console.log(No data found for selectedFeedValue: ${selectedFeedValue});
+      // res.status(404).json({ message: "Data not found" });
+    // }
+  } catch (error) {
+    console.error("Error getting feed:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
 // const firebaseConfig = {
 //     apiKey: "AIzaSyDgqMaMFxTxpnlGjZ64if-GMqsEb2R_8W0",
 //     authDomain: "cityapp-5a6b5.firebaseapp.com",
