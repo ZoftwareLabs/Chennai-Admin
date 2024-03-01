@@ -11,6 +11,7 @@ import GarbageDash from './pages/GarbageDash';
 import EleIssues from './pages/EleIssues';
 import GarabgeIssues from './pages/GarabgeIssues';
 import RoadIssues from './pages/RoadIssues';
+import WaterIssues from './pages/WaterIssues';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/elecrtical-Issues" element={<EleIssues />} />
           <Route path="/garbage-Issues" element={<GarabgeIssues />} />
           <Route path="/road-Issues" element={<RoadIssues />} />
+          <Route path="/water-Issues" element={<WaterIssues />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>

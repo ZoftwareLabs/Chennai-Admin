@@ -49,6 +49,7 @@ const WaterDash = () => {
         <br />
         <span style={{ color: "black" }}>கோவை</span>
         <br />
+        <a href="/water-Issues">Issues</a>
       </h1>
       <h1>Water Issues</h1>
       <div className="miniData">
