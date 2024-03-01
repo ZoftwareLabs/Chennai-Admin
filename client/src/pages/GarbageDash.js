@@ -41,6 +41,7 @@ const GarbageDash = () => {
         <br />
         <span style={{ color: "black" }}>கோவை</span>
         <br />
+        <a href="/garbage-Issues">Issues</a>
       </h1>
       <h1>Garbage Issues</h1>
       <div className="miniData">

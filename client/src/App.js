@@ -7,7 +7,8 @@ import EleDash from './pages/EleDash';
 import WaterDash from './pages/WaterDash';
 import RoadDash from './pages/RoadDash';
 import GarbageDash from './pages/GarbageDash';
-import EleIssues from './pages/eleIssues';
+import EleIssues from './pages/EleIssues';
+import GarabgeIssues from './pages/GarabgeIssues';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/roadDash" element={<RoadDash />} />
           <Route path="/garbageDash" element={<GarbageDash />} />
           <Route path="/elecrtical-Issues" element={<EleIssues />} />
+          <Route path="/garbage-Issues" element={<GarabgeIssues />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
