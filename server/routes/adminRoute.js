@@ -164,6 +164,24 @@ router.post("/getFeed", async (req, res) => {
 // });
 
 
+// router.post("/myJobs", async(req, res) => {
+//   const username = req.body.username;
+
+//   try {
+//     const adminJobs = await readAllData('feed');
+//     const adminJobsArray = Object.entries(adminJobs);
+
+//     const filteredAdminJobs = adminJobsArray.filter(([key, value]) => value.adminusername === username);
+
+//     const filteredAdminJobsObject = Object.fromEntries(filteredAdminJobs);
+
+//     res.status(200).json(filteredAdminJobsObject);
+//   } catch (error) {
+//     console.error('Error reading data:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
 router.post("/myJobs", async(req, res) => {
   const username = req.body.username;
 
@@ -171,16 +189,20 @@ router.post("/myJobs", async(req, res) => {
     const adminJobs = await readAllData('feed');
     const adminJobsArray = Object.entries(adminJobs);
 
+    // Filter admin jobs based on adminusername
     const filteredAdminJobs = adminJobsArray.filter(([key, value]) => value.adminusername === username);
 
-    const filteredAdminJobsObject = Object.fromEntries(filteredAdminJobs);
+    // Extract job details from filtered jobs
+    const jobsArray = filteredAdminJobs.map(([key, value]) => ({ ...value, jobId: key }));
 
-    res.status(200).json(filteredAdminJobsObject);
+    // Send the filtered jobs as response
+    res.status(200).json(jobsArray);
   } catch (error) {
     console.error('Error reading data:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 
 
 export default router;
