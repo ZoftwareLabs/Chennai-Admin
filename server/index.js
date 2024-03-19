@@ -46,6 +46,25 @@ app.post("/getKey", async (req, res) => {
   }
 });
 
+// app.post("/updateAdminUsername", async (req, res) => {
+//   try {
+//     const { key, username } = req.body;
+//     const feedData = await readAllData("feed");
+
+//     if (feedData && feedData[key]) {
+//       feedData[key].username = username; // Update adminusername field to username
+//       // Update the adminusername in your database here if necessary
+//       // Example: await updateAdminUsernameInDatabase(key, username);
+//       res.status(200).json({ message: 'Username updated successfully', updatedFeed: feedData[key] });
+//     } else {
+//       res.status(404).json({ message: 'Key not found in feed or feed data not available' });
+//     }
+//   } catch (error) {
+//     console.error("Error updating username:", error);
+//     res.status(500).json({ message: 'Internal server error' });
+//   }
+// });
+
 
 
 // app.get("/api/getOfficerJobCount",async(req,res)=>{

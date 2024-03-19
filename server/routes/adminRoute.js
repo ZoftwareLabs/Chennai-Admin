@@ -40,6 +40,50 @@ router.post("/getFeed", async (req, res) => {
   }
 });
 
+// router.post("/updateAdminUsername", async (req, res) => {
+//   try {
+//     const { key, username } = req.body;
+//     const feedData = await readAllData("feed");
+
+//     if (feedData && feedData[key]) {
+//       feedData[key].adminusername = username; // Update adminusername field to username
+//       // Update the adminusername in your database here if necessary
+//       // Example: await updateAdminUsernameInDatabase(key, username);
+//       res.status(200).json({ message: 'Username updated successfully', updatedFeed: feedData[key] });
+//     } else {
+//       res.status(404).json({ message: 'Key not found in feed or feed data not available' });
+//     }
+//   } catch (error) {
+//     console.error("Error updating username:", error);
+//     res.status(500).json({ message: 'Internal server error' });
+//   }
+// });
+
+router.post("/updateAdminUsername", async (req, res) => {
+  try {
+    const { key, username } = req.body;
+    const feedData = await readAllData("feed");
+
+    if (feedData && feedData[key]) {
+      feedData[key].adminusername = username; // Update adminusername field to username
+      await setFeedData(feedData); // Save updated feedData to the database
+      res.status(200).json({ message: 'Username updated successfully', updatedFeed: feedData[key] });
+    } else {
+      res.status(404).json({ message: 'Key not found in feed or feed data not available' });
+    }
+  } catch (error) {
+    console.error("Error updating username:", error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+async function setFeedData(feedData) {
+  const db = getDatabase();
+  const DBRef = ref(db, 'feed');
+  await set(DBRef, feedData);
+}
+
+
 
 // const firebaseConfig = {
 //     apiKey: "AIzaSyDgqMaMFxTxpnlGjZ64if-GMqsEb2R_8W0",
@@ -114,6 +158,12 @@ router.post("/getFeed", async (req, res) => {
 //     console.error('Error reading data:', error);
 //   });
 // })
+// router.put("/takeJob",async (req,res)=>{
+//   const adminusername=req.body.username;
+//   const key=req.body.key;
+// });
+
+
 router.post("/myJobs", async(req, res) => {
   const username = req.body.username;
 
