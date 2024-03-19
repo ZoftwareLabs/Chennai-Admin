@@ -13,6 +13,8 @@ import GarabgeIssues from './pages/GarabgeIssues';
 import RoadIssues from './pages/RoadIssues';
 import WaterIssues from './pages/WaterIssues';
 
+import MyJobs from './pages/MyJobs';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -43,6 +45,7 @@ function App() {
           <Route path="/garbage-Issues" element={<GarabgeIssues />} />
           <Route path="/road-Issues" element={<RoadIssues />} />
           <Route path="/water-Issues" element={<WaterIssues />} />
+          <Route path="/my-Jobs" element={<MyJobs />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>

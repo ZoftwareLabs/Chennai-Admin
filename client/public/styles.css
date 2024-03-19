@@ -243,6 +243,26 @@ form{
   flex-direction: column;
   justify-content: space-between;
 }
+.controls{
+  display: flex;
+}
+.controls button {
+  cursor: pointer;
+  height: 5vh;
+  transition: transform 0.2s;
+  color: white;
+  border-radius: 1vh;
+}
+.controls button:hover {
+  transform: scale(1.1);
+}
+
+.reject{
+  background-color: red;
+}
+.accept{
+  background-color: green;
+}
 
 /* .appie{
   background-color: #dfd4d4;
